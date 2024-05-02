@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&family=Poppins:wght@500&display=swap');
+
+* {
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+
+
+:root {
+	--main-color: rgb(228, 145, 37);
+}
+
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+header {
+	width: 100%;
+	position: absolute;
+top: 0;
+	left: 0;
+	background:#f6f6f6;
+	
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+
+	
+}
+
+.menu-icons {
+	display: none;
+ align-items: center; 
+	 justify-content: space-around;
+	color:black;
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	cursor: pointer;
+	z-index: 1500;
+	/* display: none; */
+}
+
+nav {
+	width: 100%;
+	border-radius: 1px solid rgba(255, 255, 255, 0.1);
+	-webkit-border-radius: 1px solid rgba(255, 255, 255, 0.1);
+	-moz-border-radius: 1px solid rgba(255, 255, 255, 0.1);
+	-ms-border-radius: 1px solid rgba(255, 255, 255, 0.1);
+	-o-border-radius: 1px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	align-items: center;
+	height: 30px;
+	background:#f6f6f6;
+	gap: 2rem;
+	height: 90px;
+	justify-content: space-between;
+}
+
+.logo {
+	display: inline;
+	font-size: 3rem;
+	color: #eee;
+	margin-right: 5rem;
+	font-family: 'Kanit', sans-serif;
+}
+
+.nav-list {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+}
+
+.nav-list li {
+	line-height: 8rem;
+	position: relative
+}
+
+.sub-menu li {
+	line-height: 3rem;
+}
+
+.nav-list a {
+	display: block;
+	color: black;
+	font-weight: bold;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	transition: color 650ms;
+	-webkit-transition: color 650ms;
+	-moz-transition: color 650ms;
+	-ms-transition: color 650ms;
+	-o-transition: color 650ms;
+	position: relative;
+	width: 100%;
+	align-items: center;
+
+}
+
+.nav-list a:hover {
+	color: var(--main-color);
+}
+
+.btn {
+	padding: 1.3rem;
+	display: inline-block;
+	border: 2px solid var(--main-color);
+	border-radius: 0.5rem;
+	-webkit-border-radius: 0.5rem;
+	-moz-border-radius: 0.5rem;
+	-ms-border-radius: 0.5rem;
+	-o-border-radius: 0.5rem;
+	transition: background-color 650ms;
+	-webkit-transition: background-color 650ms;
+	-moz-transition: background-color 650ms;
+	-ms-transition: background-color 650ms;
+	-o-transition: background-color 650ms;
+}
+
+.btn:hover {
+	color: var(--main-color);
+}
+
+.sub-menu {
+	width: 22rem;
+	display: block;
+	position: absolute;
+	border-top: 3px solid var(--main-color);
+	background-color: #f6f6f6;
+	z-index: 100;
+	top: 16rem;
+	transition: all 250ms ease;
+	-webkit-transition: all 250ms ease;
+	-moz-transition: all 250ms ease;
+	-ms-transition: all 250ms ease;
+	-o-transition: all 250ms ease;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.sub-menu::before {
+	content: '';
+	position: absolute;
+	top: -2.5rem;
+	left: 3rem;
+	border: 1.2rem solid transparent;
+	border-bottom: 1.2rem solid var(--main-color);
+}
+
+.sub-menu .sub-menu::before {
+	top: .9rem;
+	left: -2.5rem;
+	border: 1.2rem solid transparent;
+	border-right-color: var(--main-color);
+}
+
+.sub-menu .sub-menu {
+	border-top: none;
+	border-left: 3px solid var(--main-color);
+	top: 0;
+	left: 160%;
+}
+
+
+.nav-list li:hover>.sub-menu {
+	top: 8rem;
+	opacity: 1;
+	visibility: visible;
+}
+
+.sub-menu li:hover>.sub-menu {
+	top: 0;
+	left: 100%;
+}
+
+li.move-right {
+	margin: auto 0 auto auto;
+	line-height: initial;
+}
+
+@media screen and (max-width: 900px) {
+	.nav-list {
+		position: fixed;
+		top: 0px;
+		left: 0;
+		height: 100vh;
+		flex-direction: column;
+		background-color:#f6f6f6;
+		z-index: 1000;
+		align-items: initial;
+		display: none;
+		overflow-y: scroll;
+		width: 100%;
+		padding-left: 30px;
+	}
+
+	.nav-list>li {
+		line-height: 2rem;
+	}
+
+	.sub-menu {
+		position: initial;
+		border: 3px solid transparent;
+		margin-left: 1rem;
+		max-height: 0;
+		background: #f6f6f6;
+		overflow: hidden;
+		margin-right: 0.4rem;
+		padding-right: 1rem;
+	}
+
+	.sub-menu .sub-menu {
+		border: none;
+		overflow: hidden;
+		margin-right: 0.4rem;
+	}
+
+	.sub-menu::before {
+		display: none;
+	}
+
+	.nav-list li:hover>.sub-menu {
+		opacity: 1;
+		visibility: visible;
+		max-height: initial;
+	}
+
+	li.move-right {
+		margin: 0 auto 0 0;
+		line-height: initial;
+		transition: all 0.10s ease;
+
+	}
+
+	.menu-icons {
+		display: block;
+		transition: all 0.10s ease;
+
+	}
+
+	.fa-times {
+		display: none;
+	}
+
+	nav.active .fa-times {
+		display: block;
+	}
+
+	nav.active .fa-bars {
+		display: none;
+	}
+
+	nav.active .nav-list {
+		display: flex;
+	}
+}
+.fas{
+	margin-left: 3px;
+}
+/* Apply the initial rotation to the <i> tag */
+nav i {
+	transform: rotate(0deg);
+	transition: transform 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  /* Rotate the <i> tag when hovering over the Link element */
+  nav a:hover i {
+	transform: rotate(180deg);
+  }
+
+
+
+  

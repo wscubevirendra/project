@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mahadevcreate/static/css/main.de564b10.css",
+    "main.js": "/mahadevcreate/static/js/main.63164d9c.js",
+    "index.html": "/mahadevcreate/index.html",
+    "main.de564b10.css.map": "/mahadevcreate/static/css/main.de564b10.css.map",
+    "main.63164d9c.js.map": "/mahadevcreate/static/js/main.63164d9c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de564b10.css",
+    "static/js/main.63164d9c.js"
+  ]
+}

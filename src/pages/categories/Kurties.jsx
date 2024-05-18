@@ -33,7 +33,7 @@ const Kurties = () => {
     },{
         image:"img/IMG-20240422-WA0069.jpg",
         name: "Kurties Design",
-    }
+    },
    
    ]
    
